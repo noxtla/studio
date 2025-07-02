@@ -1,6 +1,8 @@
+// src/app/page.tsx
 "use client";
 
 import { useState } from "react";
+import { useRouter } from 'next/navigation'; // NUEVO: Importar useRouter
 import Step0Welcome from "@/components/phone-verify/step-0-welcome";
 import Step1PhoneInput from "@/components/phone-verify/step-1-phone-input";
 import WelcomeDialog from "@/components/phone-verify/welcome-dialog";
@@ -13,6 +15,8 @@ export default function Home() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
   const [dialogState, setDialogState] = useState<DialogState>("closed");
+
+  const router = useRouter(); // NUEVO: Inicializar useRouter
 
   const restartForm = () => {
     setPhoneNumber("");
@@ -31,9 +35,17 @@ export default function Home() {
 
     if (isUserFound) {
       setDialogState("welcome");
+      // NO REDIRIGIMOS AQUÍ DIRECTAMENTE, lo hacemos al confirmar el diálogo
     } else {
       setDialogState("not-found");
     }
+  };
+
+  // NUEVO: Función para manejar la confirmación del diálogo de bienvenida y redirigir
+  const handleWelcomeDialogConfirm = () => {
+    setDialogState("closed"); // Cierra el diálogo
+    setIsProcessing(false); // Detiene el estado de procesamiento
+    router.push("/dashboard"); // Redirige al usuario a la nueva página
   };
 
   const handleNext = () => {
@@ -53,6 +65,8 @@ export default function Home() {
   const handleNotFoundDialogClose = () => {
     setDialogState("closed");
     setIsProcessing(false);
+    // Podrías decidir aquí si quieres reiniciar el formulario o no para el caso de "no encontrado"
+    // Actualmente, no lo reinicia, solo cierra el diálogo y permite intentar de nuevo.
   };
   
   return (
@@ -72,7 +86,7 @@ export default function Home() {
 
       <WelcomeDialog
         open={dialogState === "welcome"}
-        onConfirm={restartForm}
+        onConfirm={handleWelcomeDialogConfirm} // MODIFICADO: Ahora llama a la nueva función
       />
       <NotFoundDialog
         open={dialogState === "not-found"}

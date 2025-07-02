@@ -1,3 +1,4 @@
+// tailwind.config.ts
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -25,6 +26,7 @@ export default {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
         },
+        // ACTUALIZADOS: NUEVOS COLORES PRIMARY, SECONDARY, ACCENT
         primary: {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
@@ -41,6 +43,7 @@ export default {
           DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
+        // Destructive permanece igual
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
@@ -65,11 +68,40 @@ export default {
           border: 'hsl(var(--sidebar-border))',
           ring: 'hsl(var(--sidebar-ring))',
         },
+        // COLORES ESPECÍFICOS DEL QUIZ (ACTUALIZADOS)
+        'quiz-action': { // RENOMBRADO: Antes 'quiz-primary-green'
+          DEFAULT: 'hsl(var(--primary))', // Usa el nuevo primary (naranja)
+          darker: 'hsl(var(--quiz-primary-button-darker))', // Para hover
+        },
+        'quiz-success-green': { // Mantiene el verde para semántica de 'éxito'
+          DEFAULT: '#22c55e',
+          darker: '#16a34a',
+        },
+        'quiz-danger-red': { // Mantiene el rojo para semántica de 'peligro'
+          DEFAULT: '#ef4444',
+          darker: '#dc2626',
+        },
+        'quiz-background-light': '#f0f2f5', // Fondo del body del quiz
+        'quiz-section-bg': '#f9fafb', // Fondo de la sección de flashcard
+        'quiz-message-blue': { // Usa derivados de la nueva paleta
+          DEFAULT: 'hsl(var(--quiz-message-blue))',
+          text: 'hsl(var(--quiz-message-blue-text))',
+        },
+        'quiz-elaboration-green': { // Usa derivados de la nueva paleta
+          DEFAULT: 'hsl(var(--quiz-elaboration-green))',
+          border: 'hsl(var(--quiz-elaboration-border))',
+          text: 'hsl(var(--quiz-elaboration-text))',
+        },
       },
       borderRadius: {
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
+        'quiz-lg': '16px', // .container
+        'quiz-md': '12px', // .flashcard-section, .message-box, .elaboration-box
+        'quiz-sm': '10px', // .button
+        'quiz-xs': '8px', // .section-nav-button
+        'full': '9999px', // Para el spinner
       },
       keyframes: {
         'accordion-down': {
@@ -88,11 +120,16 @@ export default {
             height: '0',
           },
         },
+        spin: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'step-enter': 'stepEnter 0.5s ease-in-out forwards',
+        spin: 'spin 1s linear infinite',
       },
     },
   },

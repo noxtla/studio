@@ -4,34 +4,54 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 210 40% 98%; /* Light background */
+    --foreground: 222.2 84% 4.9%; /* Dark foreground text */
+
     --card: 210 40% 98%;
     --card-foreground: 222.2 84% 4.9%;
     --popover: 210 40% 98%;
     --popover-foreground: 222.2 84% 4.9%;
-    --primary: 217.2 91.2% 59.8%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    /* NUEVOS COLORES BASE: #E27434 (Naranja) como Primary */
+    --primary: 26 77% 55%; /* HSL for #E27434 */
+    --primary-foreground: 210 40% 98%; /* White for contrast */
+
+    /* NUEVOS COLORES BASE: #D2C074 (Amarillo Mostaza) como Secondary */
+    --secondary: 48 45% 64%; /* HSL for #D2C074 */
+    --secondary-foreground: 222.2 47.4% 11.2%; /* Dark text for contrast */
+
+    /* NUEVOS COLORES BASE: #00547A (Azul Teal Oscuro) como Accent */
+    --accent: 198 100% 24%; /* HSL for #00547A */
+    --accent-foreground: 210 40% 98%; /* White for contrast */
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 178 68% 51%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Destructive remains red for semantic meaning */
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
+
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary: 240 5.9% 10%; /* Consider updating this to a new palette color if needed */
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Colores específicos del QUIZ, adaptados a la nueva paleta */
+    --quiz-primary-button-darker: 26 77% 45%; /* Darker orange for hover */
+    --quiz-message-blue: 48 45% 85%; /* Lighter shade of #D2C074 for message box background */
+    --quiz-message-blue-text: 198 100% 24%; /* #00547A for message box text */
+    --quiz-elaboration-green: 48 45% 85%; /* Lighter shade of #D2C074 for elaboration background */
+    --quiz-elaboration-border: 198 100% 24%; /* #00547A for elaboration border */
+    --quiz-elaboration-text: 198 100% 14%; /* Darker shade of #00547A for elaboration text */
   }
 
   .dark {
@@ -41,19 +61,25 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+
+    /* Dark mode adjustments for new colors */
+    --primary: 26 77% 45%; /* Darker orange */
     --primary-foreground: 210 40% 98%;
-    --secondary: 217.2 32.6% 17.5%;
+
+    --secondary: 48 45% 54%; /* Darker muted yellow */
     --secondary-foreground: 210 40% 98%;
+
+    --accent: 198 100% 34%; /* Lighter dark teal for visibility in dark mode */
+    --accent-foreground: 222.2 47.4% 11.2%;
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215.4 16.3% 56.9%;
-    --accent: 178 68% 51%;
-    --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 217.2 91.2% 59.8%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -62,6 +88,14 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+
+    /* Quiz colors for dark mode - adjust as needed for contrast */
+    --quiz-primary-button-darker: 26 77% 35%;
+    --quiz-message-blue: 48 45% 70%;
+    --quiz-message-blue-text: 210 40% 98%;
+    --quiz-elaboration-green: 48 45% 70%;
+    --quiz-elaboration-border: 198 100% 34%;
+    --quiz-elaboration-text: 210 40% 98%;
   }
 }
 
