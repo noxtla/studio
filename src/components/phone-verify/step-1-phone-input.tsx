@@ -39,7 +39,7 @@ export default function Step1PhoneInput({
     setPhoneNumber(formatted);
   };
 
-  const canProceed = phoneNumber.replace(/\D/g, "").length === 10;
+  const canProceed = phoneNumber.replace(/\D/g, "").length === 10; // Modified to only check length
 
   return (
     <div className="w-full animate-step-enter">
