@@ -42,7 +42,7 @@ const MenuItem: FC<MenuItemProps> = ({ title, icon: Icon, href, isPrimary = true
 
 export default function DashboardPage() {
   const primaryMenuItems: MenuItemProps[] = [
-    { title: 'Safety', icon: BookHeart, href: '/safety' }, // MODIFICADO: Cambiado a '/safety'
+    { title: 'Safety', icon: BookHeart, href: '/safety.tsx' }, // MODIFICADO: Cambiado a '/safety'
   ];
 
   const secondaryMenuItems: MenuItemProps[] = [];
