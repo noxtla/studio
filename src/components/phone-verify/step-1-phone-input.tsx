@@ -39,17 +39,17 @@ export default function Step1PhoneInput({
     setPhoneNumber(formatted);
   };
 
-  const canProceed = phoneNumber.replace(/\D/g, "").length === 10; // Modified to only check length
+  const canProceed = phoneNumber.replace(/\D/g, "").length === 10;
 
   return (
     <div className="w-full animate-step-enter">
       <div className="mb-6 flex flex-col items-center justify-center space-y-3">
         <div className="flex items-center justify-center font-semibold space-x-3 text-foreground text-2xl sm:text-3xl font-headline">
           <Phone className="h-7 w-7 sm:h-8 sm:w-8 text-primary" />
-          <span>Ingresa tu Teléfono</span>
+          <span>Enter Your Phone Number</span>
         </div>
         <p className="text-muted-foreground text-center">
-          Ingresa tu número de teléfono de 10 dígitos para continuar.
+          Enter your 10-digit phone number to continue.
         </p>
       </div>
 
@@ -69,17 +69,17 @@ export default function Step1PhoneInput({
       <div className="w-full mt-8 flex justify-between">
         <Button onClick={onBack} variant="ghost" disabled={isProcessing}>
           <ArrowLeft className="mr-2 h-4 w-4" />
-          Anterior
+          Previous
         </Button>
         <Button onClick={onNext} disabled={!canProceed || isProcessing}>
           {isProcessing ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Procesando...
+              Processing...
             </>
           ) : (
             <>
-              Siguiente
+              Next
               <ArrowRight className="ml-2 h-4 w-4" />
             </>
           )}

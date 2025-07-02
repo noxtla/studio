@@ -20,9 +20,9 @@ export default function NotFoundDialog({ open, onConfirm }: NotFoundDialogProps)
     <AlertDialog open={open}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="font-headline">USUARIO NO ENCONTRADO</AlertDialogTitle>
+          <AlertDialogTitle className="font-headline">USER NOT FOUND</AlertDialogTitle>
           <AlertDialogDescription>
-            Por favor, contacta a tu administrador.
+            Please contact your administrator.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>

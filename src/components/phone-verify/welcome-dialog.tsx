@@ -20,9 +20,9 @@ export default function WelcomeDialog({ open, onConfirm }: WelcomeDialogProps) {
     <AlertDialog open={open}>
       <AlertDialogContent>
         <AlertDialogHeader>
-          <AlertDialogTitle className="font-headline">¡Bienvenido de Nuevo!</AlertDialogTitle>
+          <AlertDialogTitle className="font-headline">Welcome Back!</AlertDialogTitle>
           <AlertDialogDescription>
-            Hola, es genial verte de nuevo. Serás redirigido para iniciar.
+            Hello, great to see you again. You will be redirected to proceed.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
